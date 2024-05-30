@@ -17,6 +17,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -34,6 +35,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.google.firebase.auth.FirebaseAuth
 import com.kryptopass.cinematix.R
 import com.kryptopass.common.nav.NavRoutes
 
@@ -142,10 +144,16 @@ fun LoginScreen(navController: NavHostController) {
     }
 }
 
+
+
 @Composable
 fun LoginDialog(onDismiss: () -> Unit, navController: NavHostController) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
+    val auth: FirebaseAuth = remember { FirebaseAuth.getInstance() }
+    val context = LocalContext.current
+
+
 
     AlertDialog(
         modifier = Modifier
@@ -162,7 +170,7 @@ fun LoginDialog(onDismiss: () -> Unit, navController: NavHostController) {
                     label = { Text(stringResource(R.string.email_entry)) }
                 )
                 Spacer(modifier = Modifier.height(8.dp))
-                OutlinedTextField(
+                TextField(
                     value = password,
                     onValueChange = { password = it },
                     label = { Text(stringResource(R.string.password_entry)) }
@@ -171,7 +179,7 @@ fun LoginDialog(onDismiss: () -> Unit, navController: NavHostController) {
         },
         confirmButton = {
             OutlinedButton(
-                onClick = { navController.navigate(NavRoutes.Movies.route) },
+                onClick = { loginWithEmailAndPassword(email, password, auth, context, navController) },
                 modifier = Modifier
                     .width(100.dp)
                     .height(45.dp)
