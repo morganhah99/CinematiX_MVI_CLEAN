@@ -15,15 +15,17 @@ sealed class NavRoutes(
         route = String.format(ROUTE_MOVIE, "{$ARG_MOVIE_ID}"),
         arguments = listOf(
             navArgument(ARG_MOVIE_ID) { type = NavType.IntType },
-            navArgument(ARG_MOVIE_TITLE) { type = NavType.StringType }
+            navArgument(ARG_MOVIE_TITLE) { type = NavType.StringType },
+            navArgument(ARG_BACKDROP_PATH) { type = NavType.StringType}
         )
     ) {
-        fun routeForMovie(input: MovieInput) = "movies/${input.movieId}?${ARG_MOVIE_TITLE}=${input.title}"
-
+        fun routeForMovie(input: MovieInput) =
+            "movies/${input.movieId}?${ARG_MOVIE_TITLE}=${input.title}&${ARG_BACKDROP_PATH}=${input.backdropPath}"
         fun fromEntry(entry: NavBackStackEntry): MovieInput {
             return MovieInput(
                 entry.arguments?.getInt(ARG_MOVIE_ID) ?: 0,
-                entry.arguments?.getString(ARG_MOVIE_TITLE) ?: ""
+                entry.arguments?.getString(ARG_MOVIE_TITLE) ?: "",
+                entry.arguments?.getString(ARG_BACKDROP_PATH) ?: ""
             )
         }
     }
@@ -38,6 +40,7 @@ sealed class NavRoutes(
         const val ROUTE_SEARCH = "search"
         const val ARG_MOVIE_ID = "movieId"
         const val ARG_MOVIE_TITLE = "title"
+        const val ARG_BACKDROP_PATH = "backdropPath"
         const val ROUTE_LOGIN = "login"
         const val ROUTE_SIGN_UP = "signup"
     }

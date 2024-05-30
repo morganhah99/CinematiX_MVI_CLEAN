@@ -6,5 +6,5 @@ import com.kryptopass.common.state.UiAction
 sealed class MovieListUiAction : UiAction {
 
     data object Load : MovieListUiAction()
-    data class OnMovieItemClick(val movieId: Int?, val title: String?) : MovieListUiAction()
+    data class OnMovieItemClick(val movieId: Int?, val title: String?, val backdropPath: String?) : MovieListUiAction()
 }
