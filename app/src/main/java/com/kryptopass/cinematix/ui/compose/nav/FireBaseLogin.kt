@@ -27,3 +27,13 @@ fun loginWithEmailAndPassword(
             }
         }
 }
+
+
+fun checkAuthStatus(auth: FirebaseAuth, navController: NavHostController) {
+    val currentUser = auth.currentUser
+    if (currentUser != null) {
+        navController.navigate(NavRoutes.Movies.route) {
+            popUpTo(NavRoutes.Login.route) { inclusive = true }
+        }
+    }
+}

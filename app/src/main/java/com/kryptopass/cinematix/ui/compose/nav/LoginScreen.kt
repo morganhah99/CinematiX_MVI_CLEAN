@@ -19,6 +19,7 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -43,6 +44,12 @@ import com.kryptopass.common.nav.NavRoutes
 fun LoginScreen(navController: NavHostController) {
     var showLoginDialog by remember { mutableStateOf(false) }
     val backgroundImage: Painter = painterResource(R.drawable.app_bc)
+
+    val auth = FirebaseAuth.getInstance()
+
+    LaunchedEffect(Unit) {
+        checkAuthStatus(auth, navController)
+    }
 
     Image(
         painter = backgroundImage,
