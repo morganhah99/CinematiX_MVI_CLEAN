@@ -7,13 +7,13 @@
 
 ## TODO
 
-- Auth (Alexander)
+- Auth 
     - Email/Password
     - Social
     - Forgot Password
 - Accessibility & Localization
-- Pagination (Jonathan)
-- Navigation Top/Bottom (Emmanuel)
+- Pagination
+- Navigation Top/Bottom 
     - Search
     - Home
     - About
