@@ -12,20 +12,22 @@ sealed class NavRoutes(
     data object Movies : NavRoutes(ROUTE_MOVIES)
 
     data object Movie : NavRoutes(
-        route = "movies/{$ARG_MOVIE_ID}?${ARG_MOVIE_TITLE}={${ARG_MOVIE_TITLE}}&${ARG_BACKDROP_PATH}={${ARG_BACKDROP_PATH}}",
+        route = "movies/{$ARG_MOVIE_ID}?${ARG_MOVIE_TITLE}={${ARG_MOVIE_TITLE}}&${ARG_BACKDROP_PATH}={${ARG_BACKDROP_PATH}}&${ARG_OVERVIEW}={${ARG_OVERVIEW}}",
         arguments = listOf(
             navArgument(ARG_MOVIE_ID) { type = NavType.IntType },
             navArgument(ARG_MOVIE_TITLE) { type = NavType.StringType },
-            navArgument(ARG_BACKDROP_PATH) { type = NavType.StringType}
+            navArgument(ARG_BACKDROP_PATH) { type = NavType.StringType},
+            navArgument(ARG_OVERVIEW) { type = NavType.StringType }
         )
     ) {
         fun routeForMovie(input: MovieInput) =
-            "movies/${input.movieId}?${ARG_MOVIE_TITLE}=${input.title}&${ARG_BACKDROP_PATH}=${input.backdropPath}"
+            "movies/${input.movieId}?${ARG_MOVIE_TITLE}=${input.title}&${ARG_BACKDROP_PATH}=${input.backdropPath}&${ARG_OVERVIEW}=${input.overview}"
         fun fromEntry(entry: NavBackStackEntry): MovieInput {
             return MovieInput(
                 entry.arguments?.getInt(ARG_MOVIE_ID) ?: 0,
                 entry.arguments?.getString(ARG_MOVIE_TITLE) ?: "",
-                entry.arguments?.getString(ARG_BACKDROP_PATH) ?: ""
+                entry.arguments?.getString(ARG_BACKDROP_PATH) ?: "",
+                entry.arguments?.getString(ARG_OVERVIEW) ?: ""
             )
         }
     }
@@ -41,6 +43,7 @@ sealed class NavRoutes(
         const val ARG_MOVIE_ID = "movieId"
         const val ARG_MOVIE_TITLE = "title"
         const val ARG_BACKDROP_PATH = "backdropPath"
+        const val ARG_OVERVIEW = "overview"
         const val ROUTE_LOGIN = "login"
         const val ROUTE_SIGN_UP = "signup"
     }
