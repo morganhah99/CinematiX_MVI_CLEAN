@@ -87,7 +87,7 @@ fun App(navController: NavHostController) {
                 MovieListScreen(hiltViewModel(), navController)
             }
             composable(
-                route = NavRoutes.Movie.route,
+                route = NavRoutes.Movie.route + "?${NavRoutes.ARG_MOVIE_TITLE}={${NavRoutes.ARG_MOVIE_TITLE}}",
                 arguments = NavRoutes.Movie.arguments
             ) {
                 MovieScreen(hiltViewModel(), NavRoutes.Movie.fromEntry(it))

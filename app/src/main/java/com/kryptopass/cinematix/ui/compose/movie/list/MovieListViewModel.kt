@@ -1,10 +1,6 @@
 package com.kryptopass.cinematix.ui.compose.movie.list
 
 import androidx.lifecycle.viewModelScope
-import com.kryptopass.cinematix.ui.compose.movie.list.MovieListConverter
-import com.kryptopass.cinematix.ui.compose.movie.list.MovieListModel
-import com.kryptopass.cinematix.ui.compose.movie.list.MovieListUiAction
-import com.kryptopass.cinematix.ui.compose.movie.list.MovieListUiSingleEvent
 import com.kryptopass.common.nav.MovieInput
 import com.kryptopass.common.nav.NavRoutes
 import com.kryptopass.common.state.MviViewModel
@@ -33,7 +29,7 @@ class MovieListViewModel @Inject constructor(
                 submitSingleEvent(
                     MovieListUiSingleEvent.OpenDetailsScreen(
                         NavRoutes.Movie.routeForMovie(
-                            MovieInput(action.movieId)
+                            MovieInput(action.movieId, action.title)
                         )
                     )
                 )

@@ -24,5 +24,10 @@ fun MovieScreen(
             text = "${input.movieId}",
             style = MaterialTheme.typography.headlineLarge
         )
+
+        Text(
+            text = "${input.title}",
+            style = MaterialTheme.typography.headlineLarge
+        )
     }
 }

@@ -4,7 +4,6 @@ import androidx.navigation.NamedNavArgument
 import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavType
 import androidx.navigation.navArgument
-import com.kryptopass.common.nav.NavRoutes.Companion.ARG_MOVIE_ID
 
 sealed class NavRoutes(
     val route: String,
@@ -15,13 +14,17 @@ sealed class NavRoutes(
     data object Movie : NavRoutes(
         route = String.format(ROUTE_MOVIE, "{$ARG_MOVIE_ID}"),
         arguments = listOf(
-            navArgument(ARG_MOVIE_ID) { type = NavType.IntType}
+            navArgument(ARG_MOVIE_ID) { type = NavType.IntType },
+            navArgument(ARG_MOVIE_TITLE) { type = NavType.StringType }
         )
     ) {
-        fun routeForMovie(input: MovieInput) = String.format(ROUTE_MOVIE, input.movieId)
+        fun routeForMovie(input: MovieInput) = "movies/${input.movieId}?${ARG_MOVIE_TITLE}=${input.title}"
 
         fun fromEntry(entry: NavBackStackEntry): MovieInput {
-            return MovieInput(entry.arguments?.getInt(ARG_MOVIE_ID) ?: 0)
+            return MovieInput(
+                entry.arguments?.getInt(ARG_MOVIE_ID) ?: 0,
+                entry.arguments?.getString(ARG_MOVIE_TITLE) ?: ""
+            )
         }
     }
 
@@ -34,6 +37,7 @@ sealed class NavRoutes(
         const val ROUTE_MOVIE = "movies/%s"
         const val ROUTE_SEARCH = "search"
         const val ARG_MOVIE_ID = "movieId"
+        const val ARG_MOVIE_TITLE = "title"
         const val ROUTE_LOGIN = "login"
         const val ROUTE_SIGN_UP = "signup"
     }
