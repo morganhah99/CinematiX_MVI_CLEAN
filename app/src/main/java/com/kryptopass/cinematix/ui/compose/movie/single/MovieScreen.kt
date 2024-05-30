@@ -21,7 +21,7 @@ fun MovieScreen(
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            text = "Movie Details Screen",
+            text = "${input.movieId}",
             style = MaterialTheme.typography.headlineLarge
         )
     }
