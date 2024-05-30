@@ -83,6 +83,7 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics-ktx")
     implementation("com.google.firebase:firebase-auth-ktx")
     implementation(libs.androidx.constraintlayout.compose)
+    implementation(libs.androidx.junit.ktx)
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
 
     ksp(libs.hilt.compiler)

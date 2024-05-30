@@ -1,5 +1,7 @@
 package com.kryptopass.cinematix.ui.compose.movie.single
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -17,6 +19,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
 import com.kryptopass.common.nav.MovieInput
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun MovieScreen(viewModel: MovieViewModel, input: MovieInput) {
 
@@ -47,7 +50,7 @@ fun MovieScreen(viewModel: MovieViewModel, input: MovieInput) {
             )
 
             Text(
-                text = "${input.releaseDate}",
+                text = viewModel.formatData(input.releaseDate),
                 style = MaterialTheme.typography.headlineMedium,
                 modifier = Modifier.padding(vertical = 8.dp)
             )
