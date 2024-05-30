@@ -4,6 +4,7 @@ import androidx.navigation.NamedNavArgument
 import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavType
 import androidx.navigation.navArgument
+import com.kryptopass.common.nav.NavRoutes.Companion.ARG_MOVIE_ID
 
 sealed class NavRoutes(
     val route: String,
@@ -13,9 +14,9 @@ sealed class NavRoutes(
 
     data object Movie : NavRoutes(
         route = String.format(ROUTE_MOVIE, "{$ARG_MOVIE_ID}"),
-        arguments = listOf(navArgument(ARG_MOVIE_ID) {
-            type = NavType.IntType
-        })
+        arguments = listOf(
+            navArgument(ARG_MOVIE_ID) { type = NavType.IntType}
+        )
     ) {
         fun routeForMovie(input: MovieInput) = String.format(ROUTE_MOVIE, input.movieId)
 
