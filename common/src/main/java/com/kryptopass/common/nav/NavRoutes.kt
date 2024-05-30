@@ -12,7 +12,7 @@ sealed class NavRoutes(
     data object Movies : NavRoutes(ROUTE_MOVIES)
 
     data object Movie : NavRoutes(
-        route = String.format(ROUTE_MOVIE, "{$ARG_MOVIE_ID}"),
+        route = "movies/{$ARG_MOVIE_ID}?${ARG_MOVIE_TITLE}={${ARG_MOVIE_TITLE}}&${ARG_BACKDROP_PATH}={${ARG_BACKDROP_PATH}}",
         arguments = listOf(
             navArgument(ARG_MOVIE_ID) { type = NavType.IntType },
             navArgument(ARG_MOVIE_TITLE) { type = NavType.StringType },
