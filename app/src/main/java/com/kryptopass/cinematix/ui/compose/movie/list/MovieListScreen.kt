@@ -1,5 +1,6 @@
 package com.kryptopass.cinematix.ui.compose.movie.list
 
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -62,6 +63,7 @@ fun MovieListScreen(
         viewModel.singleEventFlow.collectLatest {
             when (it) {
                 is MovieListUiSingleEvent.OpenDetailsScreen -> {
+                    Log.i("ROUTE", it.navRoute)
                     navController.navigate(it.navRoute)
                 }
             }

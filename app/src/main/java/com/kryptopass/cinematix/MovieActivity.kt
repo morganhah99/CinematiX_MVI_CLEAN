@@ -1,25 +1,31 @@
 package com.kryptopass.cinematix
 
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
+import androidx.compose.material.IconButton
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ExitToApp
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -45,6 +51,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MovieActivity : ComponentActivity() {
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -54,24 +61,45 @@ class MovieActivity : ComponentActivity() {
     }
 }
 
+@RequiresApi(Build.VERSION_CODES.O)
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun App(navController: NavHostController) {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val bottomBarState = remember { mutableStateOf(true) }
+    val topBarState = remember { mutableStateOf(false) }
 
     when (navBackStackEntry?.destination?.route) {
         NavRoutes.Movies.route,
         NavRoutes.Search.route -> {
             bottomBarState.value = true
+            topBarState.value = false
+        }
+
+        NavRoutes.Movie.route -> {
+            bottomBarState.value = false
+            topBarState.value = true
         }
 
         else -> {
             bottomBarState.value = false
+            topBarState.value = false
         }
     }
 
     Scaffold(
-        // top bar
+        topBar = {
+            if (topBarState.value) {
+                TopAppBar(
+                    title = { Text(text = "Movie Details") },
+                    navigationIcon = {
+                        IconButton(onClick = { navController.popBackStack() }) {
+                            Icon(imageVector = Icons.Default.ArrowBack, contentDescription = "Back")
+                        }
+                    }
+                )
+            }
+        },
         bottomBar = {
             if (bottomBarState.value) {
                 BottomAppBar(navController = navController)
