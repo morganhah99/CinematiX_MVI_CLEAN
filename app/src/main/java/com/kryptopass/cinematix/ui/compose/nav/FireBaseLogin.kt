@@ -19,7 +19,6 @@ fun loginWithEmailAndPassword(
                 navController.navigate(NavRoutes.Movies.route)
             }
             else {
-                // Login failed, show error message
                 Toast.makeText(
                     context,
                     task.exception?.message ?: "Login failed",

@@ -83,6 +83,7 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics-ktx")
     implementation("com.google.firebase:firebase-auth-ktx")
     implementation(libs.androidx.constraintlayout.compose)
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
 
     ksp(libs.hilt.compiler)
 
@@ -95,4 +96,15 @@ dependencies {
 
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    testImplementation ("junit:junit:4.13.2")
+    testImplementation ("org.mockito:mockito-core:3.11.2")
+    testImplementation ("org.mockito:mockito-inline:3.11.2")
+    testImplementation ("androidx.arch.core:core-testing:2.1.0")
+
+    testImplementation ("org.mockito.kotlin:mockito-kotlin:3.2.0")
+
+    testImplementation ("org.robolectric:robolectric:4.7.3")
+
+
 }
