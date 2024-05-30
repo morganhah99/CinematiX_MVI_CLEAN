@@ -50,6 +50,7 @@ fun MovieListScreen(
                             item.title,
                             item.backdropPath,
                             item.overview,
+                            item.releaseDate
                         )
                     )
                 }

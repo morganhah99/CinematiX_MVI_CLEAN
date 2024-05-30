@@ -34,6 +34,7 @@ class MovieListViewModel @Inject constructor(
                                 action.title,
                                 action.backdropPath,
                                 action.overview,
+                                action.releaseDate
                             )
                         )
                     )

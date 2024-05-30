@@ -46,6 +46,12 @@ fun MovieScreen(viewModel: MovieViewModel, input: MovieInput) {
                 modifier = Modifier.padding(vertical = 8.dp)
             )
 
+            Text(
+                text = "${input.releaseDate}",
+                style = MaterialTheme.typography.headlineMedium,
+                modifier = Modifier.padding(vertical = 8.dp)
+            )
+
 
             Divider(color = MaterialTheme.colorScheme.onBackground, thickness = 1.dp)
 

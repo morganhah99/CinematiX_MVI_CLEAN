@@ -11,5 +11,6 @@ sealed class MovieListUiAction : UiAction {
         val title: String?,
         val backdropPath: String?,
         val overview: String?,
+        val releaseDate: String?,
     ) : MovieListUiAction()
 }
