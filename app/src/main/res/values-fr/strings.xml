@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">CinematiX</string>
+    <string name="load_more">Charger plus</string>
+    <string name="image_desc">Image</string>
+    <string name="background_image_desc">Image de fond</string>
+    <string name="app_logo_desc">Regardez plus. Pour toujours.</string>
+    <string name="app_slogan">Watch more. Forever.</string>
+    <string name="login_text">CONNEXION</string>
+    <string name="authenticate_text">AUTHENTIFIER</string>
+    <string name="sign_up_text">S\'INSCRIRE</string>
+    <string name="login_header">Connexion</string>
+    <string name="email_entry">E-mail</string>
+    <string name="password_entry">Mot de passe</string>
+    <string name="search_label">Recherche</string>
+    <string name="sign_up">S\'inscrire</string>
+    <string name="full_name_entry">Nom complet</string>
+    <string name="full_name_error">Le nom complet est requis.</string>
+    <string name="email_text_entry">E-mail</string>
+    <string name="password_text_entry">Mot de passe</string>
+    <string name="birthday_text_entry">Date de naissance</string>
+    <string name="gender_text_entry">Genre</string>
+    <string name="zip_code_text_entry">Code postal</string>
+    <string name="subscribe_confirmation">Oui, je souhaite recevoir des communications marketing, des mises à jour, des offres spéciales (y compris des offres de partenaires) et d\'autres informations de la famille de sociétés CinematiX.</string>
+    <string name="privacy_policy">En appuyant sur \"Continuer\", vous acceptez les Conditions d\'utilisation, reconnaissez la Politique de confidentialité et acceptez qu\'après toute période promotionnelle applicable, VOTRE ABONNEMENT SE RENOUVELLE AUTOMATIQUEMENT SUR UNE BASE MENSUELLE OU ANNUELLE et vous serez facturé le montant prévu pour le plan que vous avez choisi à l\'écran précédent au début de chaque période de facturation, sauf annulation. Annulez à tout moment via votre page de compte, et votre annulation prendra effet à la fin de la période de facturation en cours.</string>
+    <string name="continue_button">CONTINUER</string>
+    <string name="home_desc">Accueil</string>
+    <string name="search_desc">Recherche</string>
+    <string name="sign_out_desc">Déconnexion</string>
+    <string name="sign_out_head">Déconnexion</string>
+    <string name="sign_out_confirm">Êtes-vous sûr de vouloir vous déconnecter ?</string>
+    <string name="yes_button">Oui</string>
+    <string name="no_button">Non</string>
+
+</resources>

@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">CinematiX</string>
+    <string name="load_more">Load More</string>
+    <string name="image_desc">Image</string>
+    <string name="background_image_desc">Background Image</string>
+    <string name="app_logo_desc">App Logo</string>
+    <string name="login_text">LOGIN</string>
+    <string name="authenticate_text">AUTHENTICATE</string>
+    <string name="sign_up_text">SIGN UP</string>
+    <string name="login_header">Login</string>
+    <string name="email_entry">Email</string>
+    <string name="password_entry">Password</string>
+    <string name="search_label">Search</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="full_name_entry">Full Name</string>
+    <string name="full_name_error">Full name is required.</string>
+    <string name="email_text_entry">Email</string>
+    <string name="password_text_entry">Password</string>
+    <string name="birthday_text_entry">Birthday</string>
+    <string name="gender_text_entry">Gender</string>
+    <string name="zip_code_text_entry">ZIP Code</string>
+    <string name="subscribe_confirmation">Yes, I would like to receive marketing communications, updates, special offers (including partner offers), and other information from the CinematiX family of companies.</string>
+    <string name="privacy_policy">By pressing \"Continue\", you agree to the Terms of Use, acknowledge the Privacy Policy, and agree that after any applicable promotional period, YOUR SUBSCRIPTION WILL AUTOMATICALLY RENEW ON A MONTHLY OR ANNUAL BASIS and you will be charged the amount provided for the plan you picked on the previous screen at the start of each billing period unless you cancel.. Cancel at any time through your account page, and your cancellation will become effective at the end of the current billing period.</string>
+    <string name="continue_button">CONTINUE</string>
+    <string name="home_desc">Home</string>
+    <string name="search_desc">Search</string>
+    <string name="sign_out_desc">Sign Out</string>
+    <string name="sign_out_head">Sign Out</string>
+    <string name="sign_out_confirm">Are you sure you want to sign out?</string>
+    <string name="yes_button">Yes</string>
+    <string name="no_button">No</string>
+    <string name="app_slogan">Watch more. Forever.</string>
+
+
+</resources>

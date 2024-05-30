@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">CinematiX</string>
+    <string name="load_more">Cargar más</string>
+    <string name="image_desc">Imagen</string>
+    <string name="background_image_desc">Imagen de fondo</string>
+    <string name="app_logo_desc">Logotipo de la aplicación</string>
+    <string name="app_slogan">Mira más. Para siempre.</string>
+    <string name="login_text">INICIAR SESIÓN</string>
+    <string name="authenticate_text">AUTENTICAR</string>
+    <string name="sign_up_text">REGISTRARSE</string>
+    <string name="login_header">Inicio de sesión</string>
+    <string name="email_entry">Correo electrónico</string>
+    <string name="password_entry">Contraseña</string>
+    <string name="search_label">Buscar</string>
+    <string name="sign_up">Registrarse</string>
+    <string name="full_name_entry">Nombre completo</string>
+    <string name="full_name_error">Se requiere nombre completo.</string>
+    <string name="email_text_entry">Correo electrónico</string>
+    <string name="password_text_entry">Contraseña</string>
+    <string name="birthday_text_entry">Fecha de nacimiento</string>
+    <string name="gender_text_entry">Género</string>
+    <string name="zip_code_text_entry">Código postal</string>
+    <string name="subscribe_confirmation">Sí, me gustaría recibir comunicaciones de marketing, actualizaciones, ofertas especiales (incluidas las ofertas de los socios) y otra información de la familia de empresas de CinematiX.</string>
+    <string name="privacy_policy">Al presionar "Continuar", acepta los Términos de uso, reconoce la Política de privacidad y acepta que después de cualquier período promocional aplicable, SU SUSCRIPCIÓN SE RENOVARÁ AUTOMÁTICAMENTE DE FORMA MENSUAL O ANUAL y se le cobrará el monto establecido para el plan que eligió en la pantalla anterior al inicio de cada período de facturación, a menos que cancele. Cancela en cualquier momento a través de tu página de cuenta, y tu cancelación será efectiva al final del período de facturación actual.</string>
+    <string name="continue_button">CONTINUAR</string>
+    <string name="home_desc">Inicio</string>
+    <string name="search_desc">Buscar</string>
+    <string name="sign_out_desc">Cerrar sesión</string>
+    <string name="sign_out_head">Cerrar sesión</string>
+    <string name="sign_out_confirm">¿Estás seguro de que quieres cerrar sesión?</string>
+    <string name="yes_button">Sí</string>
+    <string name="no_button">No</string>
+
+
+</resources>
